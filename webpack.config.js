@@ -34,6 +34,18 @@ module.exports = {
             NODE_ENV: JSON.stringify(NODE_ENV),
             USER: JSON.stringify(process.env.USER)
         })
-    ]
+    ],
+
+    module: {
+        /*Используется для компиляции одного вида js в другой. Например ES2015 в ES5*/
+        loaders: [{
+            /*Проверяет путь к файлу. Если тест подходит, то лоадер будет применен*/
+            test: /\.js$/,
+            /*Тоже что и test но по директориям, если директория подходит, то лоадер буедт прмиенен*/
+            /*include: [path.resolve(__dirname, 'app/src')],*/
+            /*Имя лоадера*/
+            loader: 'babel'
+        }]
+    }
 
 }

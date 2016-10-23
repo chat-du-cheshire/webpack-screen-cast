@@ -1,6 +1,6 @@
 "use srtict";
 
-let welcome = require('./welcome');
+import welcome from './welcome';
 
 welcome("Home");
 

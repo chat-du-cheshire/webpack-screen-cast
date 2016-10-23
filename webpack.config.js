@@ -45,6 +45,10 @@ module.exports = {
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV),
             USER: JSON.stringify(process.env.USER)
+        }),
+        /*Выделяем общий код для наших модулей в отдльный файл. Его надо добавлять на страницу перез испольяемыми модулями*/
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "common"
         })
     ],
 

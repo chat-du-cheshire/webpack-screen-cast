@@ -6,6 +6,8 @@ module.exports = {
     /* Куда выводить */
     output: { 
         /*Имя файла*/
-        filename: "build.js" 
+        filename: "build.js" ,
+        /*Создает глобальную переменную для доступа модулям извне*/
+        library: "home"
     }
 }

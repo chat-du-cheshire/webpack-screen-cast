@@ -51,7 +51,11 @@ var home =
 
 	welcome("Home");
 
+
+	/* Экспортируем фунцию */
 	exports.welcome = welcome;
+
+
 
 /***/ },
 /* 1 */

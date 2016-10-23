@@ -7,3 +7,4 @@ welcome("Home");
 
 /* Экспортируем фунцию */
 exports.welcome = welcome;
+

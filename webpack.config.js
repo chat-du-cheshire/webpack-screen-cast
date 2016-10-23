@@ -36,6 +36,21 @@ module.exports = {
         })
     ],
 
+    /*Поиск модулей*/
+    resolve: {
+        /*Где искать модули если не указан путь*/
+        moduleDirectories: ["node_modules"],
+        /*С какими расширениями искать модули, в данном случае можно указать module_name || module_name.js*/        
+        extensions: ['', '.js']
+    },
+    /*Поиск лоадеров*/
+    resolveLoader:{
+        modulesDirectories: ['node_modules'],
+        /*Шаблон модуля который мы ищем*/
+        moduleTemplates: ['*-loader'],
+        extensions: ['', '.js']
+    },
+
     module: {
         /*Используется для компиляции одного вида js в другой. Например ES2015 в ES5*/
         loaders: [{
@@ -44,7 +59,7 @@ module.exports = {
             /*Тоже что и test но по директориям, если директория подходит, то лоадер буедт прмиенен*/
             /*include: [path.resolve(__dirname, 'app/src')],*/
             /*Имя лоадера*/
-            loader: 'babel'
+            loader: 'babel?presets[]=es2015'
         }]
     }
 

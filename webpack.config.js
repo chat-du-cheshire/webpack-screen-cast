@@ -9,14 +9,24 @@ const NODE_ENV = process.env.NODE_ENV || "development";
 const webpack = require('webpack');
 
 module.exports = {
+    /*Директория относительно которой будут подгружаться модули*/
+    context: __dirname + '/frontend',
     /*Какой модуль собирать*/
-    entry: "./home", 
+    entry: {
+        /*Подгрузка модуля home*/
+        home: "./home",
+        /*Подгрузка модуля about*/
+        about:  "./about"
+    }, 
     /* Куда выводить */
     output: { 
+        /*Путь до директории сбрки (абсолютный)*/
+        path: __dirname + '/public',
         /*Имя файла*/
-        filename: "build.js" ,
+        /*[name] замениться на имя модуля указанного в entry*/
+        filename: "[name].js" ,
         /*Создает глобальную переменную для доступа модулям извне*/
-        library: "home"
+        library: "[name]"
     },
     /*Говорит webpack перезапускать сборку при изменении файлов*/
     watch: NODE_ENV == "development",

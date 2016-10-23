@@ -37,6 +37,8 @@ module.exports = {
     /*Позволяет при отладке работать с модулями в файлах модулей, а не в сборочном файле*/
     devtool: NODE_ENV == "development" ? "cheap-inline-module-source-map" : null,
     plugins: [
+        /*По умолчанию webpack создает файлы, даже если при сборке произошла ошибка. Данный плагин предотвращает создание файлов при ошибочной сборке.*/
+        new webpack.NoErrorsPlugin(),
         /*Подключаем виртуальное окружение в сборку*/
         /*new webpack.EnvironmentPlugin("NODE_ENV", "USER")*/
         /*Передаем в сборку переменные*/

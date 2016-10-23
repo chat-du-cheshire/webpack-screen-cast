@@ -16,7 +16,9 @@ module.exports = {
         /*Подгрузка модуля home*/
         home: "./home",
         /*Подгрузка модуля about*/
-        about:  "./about"
+        about:  "./about",
+        /*В случае если в общий код модулей надо добавить какой-то еще*/
+        common: "./common"
     }, 
     /* Куда выводить */
     output: { 

@@ -13,22 +13,18 @@ module.exports = {
     context: __dirname + '/frontend',
     /*Какой модуль собирать*/
     entry: {
-        /*Подгрузка модуля home*/
-        home: "./home",
-        /*Подгрузка модуля about*/
-        about:  "./about",
-        /*В случае если в общий код модулей надо добавить какой-то еще*/
-        common: "./common"
+        /*Подгрузка модуля app*/
+        app: "./app",
     }, 
     /* Куда выводить */
     output: { 
         /*Путь до директории сбрки (абсолютный)*/
-        path: __dirname + '/public',
+        path: __dirname + '/public/js',
         /*Имя файла*/
+        /*Указывает путь откуда подгружать модуль */
+        publicPath: '/js/',
         /*[name] замениться на имя модуля указанного в entry*/
-        filename: "[name].js" ,
-        /*Создает глобальную переменную для доступа модулям извне*/
-        library: "[name]"
+        filename: "[name].js"
     },
     /*Говорит webpack перезапускать сборку при изменении файлов*/
     watch: NODE_ENV == "development",
@@ -49,9 +45,9 @@ module.exports = {
             USER: JSON.stringify(process.env.USER)
         }),
         /*Выделяем общий код для наших модулей в отдльный файл. Его надо добавлять на страницу перез испольяемыми модулями*/
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "common"
-        })
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: "common"
+        // })
     ],
 
     /*Поиск модулей*/

@@ -1,13 +1,22 @@
 "use srtict";
 
 let moduleName = location.pathname.slice(1);
-
+console.log("Module name: '" + moduleName + "'");
 if(moduleName){
-    /* Подгрузка модуля в зависимости от условия. Например: взависимости от url */
+    let handler;
 
-    let route = require('./routes/' + moduleName);
+    try{
+        handler = require('bundle!./routes/' + moduleName);
+    } catch (e) {
+        console.warn("Bad path")
+    }
 
-    route();
+    if(handler){
+        handler(function(route){
+            route();
+        });
+    }
+
 }
 
 window.onload = function(){

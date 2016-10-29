@@ -1,5 +1,15 @@
 "use srtict";
 
+let moduleName = location.pathname.slice(1);
+
+if(moduleName){
+    /* Подгрузка модуля в зависимости от условия. Например: взависимости от url */
+
+    let route = require('./routes/' + moduleName);
+
+    route();
+}
+
 window.onload = function(){
     document.getElementById('login').onclick = function() {
         /*Подгружает модуль в [] или в require в callback*/

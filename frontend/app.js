@@ -1,38 +1,11 @@
 "use srtict";
 
-let moduleName = location.pathname.slice(1);
-console.log("Module name: '" + moduleName + "'");
-if(moduleName){
-    let handler;
+let _ = require('lodash');
 
-    try{
-        handler = require('bundle!./routes/' + moduleName);
-    } catch (e) {
-        console.warn("Bad path")
-    }
+let o = [
+    {a : 1, b: "11"},
+    {a : 2, b: "12"},
+    {a : 3, b: "13"},
+]
 
-    if(handler){
-        handler(function(route){
-            route();
-        });
-    }
-
-}
-
-window.onload = function(){
-    document.getElementById('login').onclick = function() {
-        /*Подгружает модуль в [] или в require в callback*/
-        require.ensure([], function(require){
-            let login = require('./login');
-            login();
-        }, 'auth'); /* Указывает webpack имя файла в который собираются модули */
-    }
-
-    document.getElementById('logout').onclick = function() {
-        /*Подгружает модуль в [] или в require в callback*/
-        require.ensure([], function(require){
-            let logout = require('./logout');
-            logout();
-        }, 'auth'); /* Указывает webpack имя файла в который собираются модули */
-    }
-}
+console.log(_.map(o, 'b'));

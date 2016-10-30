@@ -1,0 +1,22 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "Подгружаем модули только когда в них есть необходимость",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chat-du-cheshire/webpack-screen-cast.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chat-du-cheshire/webpack-screen-cast/issues"
+  },
+  "homepage": "https://github.com/chat-du-cheshire/webpack-screen-cast#readme",
+  "dependencies": {
+    "lodash": "^4.16.4"
+  }
+}

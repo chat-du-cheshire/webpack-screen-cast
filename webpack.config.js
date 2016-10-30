@@ -19,8 +19,9 @@ module.exports = {
         filename: "app.js"
     },
 
-    externals: {
-        lodash: '_'
-    }
- 
+    plugins: [
+        new webpack.ProvidePlugin({
+            map: 'lodash/map'
+        })
+    ]
 }

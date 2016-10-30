@@ -1,6 +1,6 @@
 "use srtict";
 
-let _ = require('lodash');
+let map = require('lodash/map');
 
 let o = [
     {a : 1, b: "11"},
@@ -8,4 +8,4 @@ let o = [
     {a : 3, b: "13"},
 ]
 
-console.log(_.map(o, 'b'));
+console.log(map(o, 'b'));
